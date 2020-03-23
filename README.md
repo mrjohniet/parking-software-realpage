@@ -8,7 +8,7 @@ How to run it?
 
 -Install node.js https://nodejs.org/es/.
 -Install angular CLI in the CMD - npm install -g @angular/cli.
--In the CMD go to the project folder and type ng-serve , if for some reason ng is not recognized try with npm run ng-serve.
+-In the CMD go to the project folder and type npm update and then ng serve , if for some reason ng is not recognized try with npm run ng-serve.
 -In the browser open localhost:4200.
 
 Features.
