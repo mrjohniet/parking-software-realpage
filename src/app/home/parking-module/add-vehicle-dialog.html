@@ -1,0 +1,29 @@
+<div class="d-flex flex-row justify-content-between">
+  <h3>Add Vehicle</h3>
+  <img *ngIf="type!=null && type==='motorbike'" src="../../../assets/bike.svg" alt="Motorbike" height="62" width="62">
+  <img *ngIf="type!=null && type==='sedan'" src="../../../assets/sedan.svg" alt="Sedan" height="62" width="62">
+  <img *ngIf="type!=null && type==='truck'" src="../../../assets/truck.svg" alt="Truck" height="62" width="62">
+</div>
+<h3>Add Vehicle</h3>
+
+<form [formGroup]="formVehicle" (ngSubmit)="parkVehicle(formVehicle.value)">
+  <div class="d-flex flex-column">
+    <mat-form-field>
+        <mat-label>Vehicle Type</mat-label>
+        <mat-select formControlName="type">
+          <mat-option *ngFor="let item of types" [value]="item.value">
+            {{item.value}}
+          </mat-option>
+        </mat-select>
+    </mat-form-field>
+
+    <mat-form-field>
+    <mat-label>License Plate</mat-label>
+    <input type="text" matInput placeholder="License Plate Number" formControlName="license" maxlength="10" oninput="this.value = this.value.toUpperCase()">
+    </mat-form-field>
+    <div class="d-flex flex-row justify-content-between">
+      <button mat-stroked-button type="button" color="primary" (click)="onNoClick()">Cancel</button>
+      <button [disabled]="formVehicle.invalid" mat-flat-button color="primary" type="submit">Park Vehicle</button>
+    </div>
+  </div>
+</form>               

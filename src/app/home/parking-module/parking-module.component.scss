@@ -1,0 +1,49 @@
+$gray: #f3f3f3;
+$background-green:#e8f1ec;
+$background-purple:#efeef7;
+$background-yellow:#f1eee7;
+
+.background {
+    background-color: $gray;
+}
+
+.parking-card {
+    margin: 1rem auto;
+    width: 61.8vw;
+}
+
+.queue {
+    background-color: $gray;
+    border-radius: 0.5em;
+}
+
+progress {
+    height: 1.61em;
+}
+
+.small-card {
+    background-color: $background-green;
+}
+
+.medium-card {
+    background-color: $background-purple;
+}
+
+.large-card {
+    background-color: $background-yellow;
+}
+
+.general-button {
+    height: 3em;
+}
+
+.general-snackbar {
+    background-color: gray;
+    margin-bottom: 10vh;
+}
+
+@media (max-width: 991.98px) {
+    .parking-card {
+        width: 85vw;
+    }
+}

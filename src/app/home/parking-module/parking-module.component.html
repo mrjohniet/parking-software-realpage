@@ -1,0 +1,74 @@
+<div class="background">
+
+    <mat-card class="parking-card">
+        <section class="queue d-flex flex-row justify-content-between p-3 mb-3">
+          <button type="button" class="general-button" mat-flat-button color="primary" (click)="addVehicle()">Add Vehicle</button>
+          <div>
+            <h4>Next in queue:&nbsp;
+              <span *ngIf="queue.length===0">No vehicles in queue</span>
+              <span *ngIf="queue.length > 0">
+                <img *ngIf="queue[0].type==='motorbike'" src="../../../assets/bike.svg" alt="Motorcycle" height="40" width="40">
+                <img *ngIf="queue[0].type==='sedan'" src="../../../assets/sedan.svg" alt="Sedan" height="40" width="40">
+                <img *ngIf="queue[0].type==='truck'" src="../../../assets/truck.svg" alt="Truck" height="40" width="40">
+                <span >
+                  {{queue[0].type}}&nbsp;{{queue[0].license}}
+                </span>
+              </span>
+            </h4>
+          </div>
+        </section>
+        <mat-card-header> 
+          <mat-card-title>Parking Spots</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <div class="row">
+              <div class="col-lg-4">
+                <mat-card class="small-card">
+                    <mat-card-header> 
+                        <mat-card-title>Small</mat-card-title> 
+                    </mat-card-header>
+                    <div class="text-center pt-3">
+                      <img src="../../../assets/bike.svg" alt="Motorcycles" height="150" width="150">
+                    </div>
+                    <div class="d-flex flex-column w-100 mt-3">
+                    <label for="motorbikes">Occupancy:&nbsp;<span>{{small_slots.length}}/{{SMALL_CAPACITY}}</span></label>
+                    <progress class="w-100" id="motorbikes" value="{{small_slots.length}}" [max]="SMALL_CAPACITY"></progress>
+                    </div>
+                </mat-card>
+              </div>
+              <div class="col-lg-4">
+                <mat-card class="medium-card">
+                    <mat-card-header> 
+                        <mat-card-title>Medium</mat-card-title>          
+                    </mat-card-header>
+                    <div class="text-center pt-3">
+                      <img src="../../../assets/sedan.svg" alt="Sedans" height="150" width="150">
+                    </div>
+                    <div class="d-flex flex-column w-100 mt-3">
+                      <label for="sedans">Occupancy:&nbsp;<span>{{medium_slots.length}}/{{MEDIUM_CAPACITY}}</span></label>
+                      <progress class="w-100" id="sedans" value="{{medium_slots.length}}" [max]="MEDIUM_CAPACITY"></progress>
+                    </div>  
+                </mat-card>
+              </div>
+              <div class="col-lg-4">
+                <mat-card class="large-card">
+                    <mat-card-header> 
+                        <mat-card-title>Large</mat-card-title>                       
+                    </mat-card-header>
+                    <div class="text-center pt-3">
+                      <img src="../../../assets/truck.svg" alt="Trucks" height="150" width="150">
+                    </div>
+                    <div class="d-flex flex-column w-100 mt-3">
+                      <label for="trucks">Occupancy:&nbsp;<span>{{large_slots.length}}/{{LARGE_CAPACITY}}</span></label>
+                      <progress class="w-100" id="trucks" value="{{large_slots.length}}" [max]="LARGE_CAPACITY"></progress>
+                    </div>   
+                </mat-card>
+              </div>
+          </div>
+        </mat-card-content>
+        <div class="d-flex flex-row justify-content-end">
+          <button class="general-button" mat-stroked-button color="primary" (click)="removeRandomVehicle()">Remove Random Vehicle</button>
+        </div>
+      </mat-card>
+
+</div>
