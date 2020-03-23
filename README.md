@@ -6,10 +6,10 @@ Node: 13.1.0
 
 How to run it?
 
-1.Install node.js https://nodejs.org/es/
-2.Install angular CLI in the CMD - npm install -g @angular/cli
-3.In the CMD go to the project folder and type ng-serve , if for some reason ng is not recognized try with npm run ng-serve.
-4.In the browser open localhost:4200
+-Install node.js https://nodejs.org/es/.
+-Install angular CLI in the CMD - npm install -g @angular/cli.
+-In the CMD go to the project folder and type ng-serve , if for some reason ng is not recognized try with npm run ng-serve.
+-In the browser open localhost:4200.
 
 Features.
 - The UI shows options to add vehicles, show the next vehicle in queue and different panels and progress bar indicators to see the availability of smalll, medium and large parking spots and the option to remove a random vehicle.
